@@ -85,8 +85,6 @@ app.get("/getSummary", (req, res) => {
    res.render("summary", variables);
 });
 
-
-app.listen(portNumber);
 app.listen(portNumber, () => {
     console.log(`Server running on port ${portNumber}`);
 });
