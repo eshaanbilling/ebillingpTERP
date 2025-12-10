@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const portNumber = process.env.PORT || 7003;
+const portNumber = 7003;
 const bodyParser = require("body-parser");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
@@ -14,6 +14,7 @@ require("dotenv").config({
    path: path.resolve(__dirname, "credentialsDontPost/.env"),
 });
 */
+
 const databaseName = "CMSC335DB";
 const collectionName = "moviesCollection";
 const uri = process.env.MONGO_CONNECTION_STRING;
@@ -85,6 +86,5 @@ app.get("/getSummary", (req, res) => {
    res.render("summary", variables);
 });
 
-app.listen(portNumber, () => {
-    console.log(`Server running on port ${portNumber}`);
-});
+app.listen(portNumber);
+console.log(`main URL http://localhost:${portNumber}/`);
